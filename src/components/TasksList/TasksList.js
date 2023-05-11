@@ -41,8 +41,7 @@ const TasksList = (props) => {
         id: jsondata.data[key].ListID,
         enteredTitle: jsondata.data[key].ListName, 
         enteredDescription: jsondata.data[key].ListDetail,
-        enteredDate: jsondata.data[key].ListTimeOut,
-        // isPriority: data[key].ListCheck,
+        enteredDate: jsondata.data[key].ListTimeOut.slice(0, 10),
         isCompleted: jsondata.data[key].ListCheck,
       });
     }
@@ -79,11 +78,11 @@ const TasksList = (props) => {
         <p className={classes.todo}>ToDo </p>List
       </h2>
       <div className={classes.sortingDiv}>
-        <p>Sort by:</p>
+        {/* <p>Sort by:</p>
         <button onClick={sortingChangeHandler}>
           Date{!isSortingUp ? <i className="fa-solid fa-arrow-up"></i> : ""}
           {isSortingUp ? <i className="fa-solid fa-arrow-down"></i> : ""}
-        </button>
+        </button> */}
         {/* <button>
           Date<i class="fa-solid fa-arrow-down"></i>
         </button> */}

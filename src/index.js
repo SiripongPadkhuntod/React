@@ -8,13 +8,16 @@ import Login from "./Login";
 import Register from "./Register";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+document.getElementById('root').classList.add('root');
+
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="/home" element={<App />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/home" element={<App />} />
     </Routes>
   </BrowserRouter>
 );

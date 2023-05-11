@@ -12,13 +12,14 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import './register.css';
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="/">
+        ToDoList
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -27,6 +28,7 @@ function Copyright(props) {
 }
 
 async function postJSON(jsonData) {
+   
     try {
       const response = await fetch("https://cloudy-elk-gear.cyclic.app/register", {
         method: "POST", // or 'PUT'
@@ -37,7 +39,7 @@ async function postJSON(jsonData) {
       });
       const result = await response.json();
         alert("Success:");
-        window.location = '/register';
+        window.location = '/login';
      
         
         return; 
@@ -65,7 +67,7 @@ export default function SignUp() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" className='reg' >
         <CssBaseline />
         <Box
           sx={{
@@ -101,7 +103,7 @@ export default function SignUp() {
                   id="lastName"
                   label="Last Name"
                   name="lastName"
-                  autoComplete="family-name"
+        
                 />
               </Grid>
               <Grid item xs={12}>
@@ -111,7 +113,7 @@ export default function SignUp() {
                   id="email"
                   label="Email Address"
                   name="email"
-                  autoComplete="email"
+         
                 />
               </Grid>
               <Grid item xs={12}>
@@ -122,7 +124,7 @@ export default function SignUp() {
                   label="Phone Number"
                   type="tel"
                   id="phone"
-                  autoComplete="tel"
+    
                 />
               </Grid>
               <Grid item xs={12}>
@@ -133,7 +135,7 @@ export default function SignUp() {
                   label="Username"
                   type="username"
                   id="username"
-                  autoComplete="username"
+                  
                 />
               </Grid>
 
@@ -145,18 +147,18 @@ export default function SignUp() {
                   label="Password"
                   type="password"
                   id="password"
-                  autoComplete="new-password"
                 />
               </Grid>
             </Grid>
-            <Button
+            <button
+              className='regbtn'
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
               Sign Up
-            </Button>
+            </button>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link href="/login" variant="body2">

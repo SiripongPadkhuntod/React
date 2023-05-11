@@ -101,6 +101,12 @@ const AddTask = (props) => {
         <button type="submit" className={classes.button}>
           {!isLoading ? "Add" : "Adding..."}
         </button>
+        <button type="button" className={classes.button} onClick={() => { localStorage.removeItem('token'); localStorage.removeItem('user'); window.location = '/login'; }}>
+          {"Logout"}
+        </button>
+        
+        
+        
       </form>
     </div>
   );

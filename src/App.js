@@ -6,9 +6,7 @@ import TasksList from "./components/TasksList/TasksList";
 
 
 export default function MyApp() {
-
-
-    useEffect(() => { 
+  useEffect(() => { 
       const token = localStorage.getItem('token');
       const Username = localStorage.getItem('user');
       fetch("https://cloudy-elk-gear.cyclic.app/authen", {
@@ -88,7 +86,6 @@ export default function MyApp() {
   return (
     <div>
       <AddTask />
-      
       <TasksList
          tasks={tasksList}
          onDeleteTask={deleteTaskHandler}
@@ -96,7 +93,7 @@ export default function MyApp() {
          onSortingTasks={sortingTasksHandler}
       />
   
-     <Button className='BTNOUT' variant="contained" component="span" onClick={() => { localStorage.removeItem('token'); localStorage.removeItem('user'); window.location = '/login'; }}>Logout</Button>
+     
     </div>
   );
 }
